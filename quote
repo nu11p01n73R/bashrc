@@ -1,0 +1,10 @@
+#!/usr/bin/python2
+
+import subprocess
+
+str = subprocess.Popen(['fortune'],stdout=subprocess.PIPE).communicate()[0]
+for line in str.split('\n'):
+	align = (85-len(line))/2
+	print ' '*align,line.replace('\t','')
+	
+
